@@ -32,9 +32,8 @@ CloudantGenerator.prototype.askFor = function askFor() {
   },{
     name: 'password',
     message: "What's your Cloudant password?",
-    options: {
-      silent: true
-    }
+    // still trying to figure out how to hide password input D:
+    // silent: true
   },{
     name: "db",
     message: "What database will your blog use?",
