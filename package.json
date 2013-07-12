@@ -1,12 +1,12 @@
 {
-  "name": "generator-cloudant",
+  "name": "generator-chaiseblog",
   "version": "0.0.0",
   "description": "A generator for Yeoman",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/garbados/generator-cloudant",
-  "bugs": "https://github.com/garbados/generator-cloudant/issues",
+  "homepage": "https://github.com/garbados/generator-chaiseblog",
+  "bugs": "https://github.com/garbados/generator-chaiseblog/issues",
   "author": {
     "name": "Max",
     "email": "",
@@ -15,7 +15,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/garbados/generator-cloudant.git"
+    "url": "git://github.com/garbados/generator-chaiseblog.git"
   },
   "scripts": {
     "test": "mocha"

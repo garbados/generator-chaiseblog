@@ -23,28 +23,47 @@ CloudantGenerator.prototype.askFor = function askFor() {
   console.log(this.yeoman);
 
   var prompts = [{
-    type: 'confirm',
-    name: 'someOption',
-    message: 'Would you like to enable this option?',
-    default: true
+    name: 'blogName',
+    message: 'What would you like to name your blog?',
+    default: "Chaise Blog"
+  },{
+    name: 'username',
+    message: "What's your Cloudant username?"
+  },{
+    name: 'password',
+    message: "What's your Cloudant password?",
+    options: {
+      silent: true
+    }
+  },{
+    name: "db",
+    message: "What database will your blog use?",
+    default: "blog"
   }];
 
   this.prompt(prompts, function (props) {
-    this.someOption = props.someOption;
+    for(var key in props){
+      this[key] = props[key];
+    }
 
     cb();
   }.bind(this));
 };
 
 CloudantGenerator.prototype.app = function app() {
-  this.mkdir('app');
-  this.mkdir('app/templates');
+  this.mkdir('_attachments');
+  this.mkdir('_attachments/js');
+  this.mkdir('_attachments/css');
 
-  this.copy('_package.json', 'package.json');
-  this.copy('_bower.json', 'bower.json');
-};
+  this.template('_config.json', 'config.json');
 
-CloudantGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
+  this.directory('views', 'views');
+  this.directory('src', 'src');
+
+  this.copy('package.json', 'package.json');
+  this.copy('rewrites.json', 'rewrites.json');
+  this.copy('app.js', 'app.js');
+  this.copy('readme.md', 'readme.md');
+  this.copy('gitignore', '.gitignore');
+  this.copy('Gruntfile.js', 'Gruntfile.js');
 };

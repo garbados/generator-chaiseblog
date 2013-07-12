@@ -1,0 +1,9 @@
+{
+  "jade": {
+    "title": "<%= blogName %>"
+  },
+  "couchapp": {
+  	"db": "https://<%= username %>:<%= password %>@<%= username %>.cloudant.com/<%= db %>",
+  	"app": "app.js"
+  }
+}
