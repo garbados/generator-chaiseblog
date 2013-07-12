@@ -5,14 +5,14 @@ var path    = require('path');
 var helpers = require('yeoman-generator').test;
 
 
-describe('cloudant generator', function () {
+describe('chaiseblog generator', function () {
   beforeEach(function (done) {
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('cloudant:app', [
+      this.app = helpers.createGenerator('chaiseblog:app', [
         '../../app'
       ]);
       done();
