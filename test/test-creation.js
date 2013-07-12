@@ -22,8 +22,21 @@ describe('chaiseblog generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       // add files you expect to exist here.
-      '.jshintrc',
-      '.editorconfig'
+      '_attachments',
+  		'_attachments/js',
+  		'_attachments/css',
+
+  		'config.json',
+
+  		'views',
+  		'src',
+
+  		'package.json',
+  		'rewrites.json',
+  		'app.js',
+  		'readme.md',
+  		'.gitignore',
+  		'Gruntfile.js'
     ];
 
     helpers.mockPrompt(this.app, {
